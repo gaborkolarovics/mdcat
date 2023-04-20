@@ -2,19 +2,15 @@
 
 set -ex
 
-#if [[ @{#} -ne "1" ]]; then
-#    echo "Usage: build_and_deploy.sh 0.26.0"
-#    exit(1)
-#fi
-
 echo "Update mdcat to version :" $1
 
-URL="https://github.com/lunaryorn/mdcat/releases/download/mdcat-$1/mdcat-$1-x86_64-unknown-linux-musl.tar.gz"
+URL="https://github.com/swsnr/mdcat/releases/download/mdcat-$1/mdcat-$1-x86_64-unknown-linux-musl.tar.gz"
 
-#wget $URL
+wget $URL
 
 docker build -t gaborkolarovics/mdcat:latest \
              -t gaborkolarovics/mdcat:$1 \
+	     --build-arg FILENAME=mdcat-$1-x86_64-unknown-linux-musl \
              .
 
 docker push gaborkolarovics/mdcat:latest

@@ -4,9 +4,10 @@ LABEL maintainer="gabor.kolarovics@gmail.com"
 LABEL description="mdcat : https://github.com/lunaryorn/mdcat \
 Usage: docker run -v `pwd`:/docs gaborkolarovics/mdcat README.md"
 
-ADD mdcat-0.24.2-x86_64-unknown-linux-musl.tar.gz /tmp
+ARG FILENAME
+ADD $FILENAME.tar.gz /tmp
 
-RUN mv /tmp/mdcat-0.24.2-x86_64-unknown-linux-musl/mdcat /bin/mdcat
+RUN mv /tmp/$FILENAME/mdcat /bin/mdcat
 
 WORKDIR /docs
 

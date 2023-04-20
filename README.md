@@ -7,9 +7,9 @@ Dockerfile for fancy markdown 'cat'
 cat a custom markdown formated file
 
 ```sh
-$ docker run --rm -v `pwd`:/docs gaborkolarovics/mdcat README.md
+$ docker run --rm -v $(pwd):/docs -i gaborkolarovics/mdcat README.md
 ```
 
 ## Application github repository
 
-https://github.com/lunaryorn/mdcat
+https://github.com/swsnr/mdcat
