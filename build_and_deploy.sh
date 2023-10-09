@@ -16,6 +16,8 @@ docker build -t gaborkolarovics/mdcat:latest \
 docker push gaborkolarovics/mdcat:latest
 docker push gaborkolarovics/mdcat:$1
 
+rm -f mdcat-$1-x86_64-unknown-linux-musl
+
 git status
 git add .
 git commit -m "Update mdcat to ${1}"
