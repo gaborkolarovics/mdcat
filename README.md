@@ -17,6 +17,6 @@ https://github.com/swsnr/mdcat
 -- teszt remote
 ----
 
-TESZT -- 2 -3 -4 -5
+TESZT -- 2 - 3 - 4 - 5 -- TESZT
 
 ----
